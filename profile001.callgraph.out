@@ -1,0 +1,269 @@
+positions: instr line
+events: goroutine(count)
+
+ob=
+fl=(1) /usr/local/go/src/runtime/mprof.go
+fn=(1) runtime.goroutineProfileWithLabels
+0x102f830 853 1
+
+ob=
+fl=(2) /usr/local/go/src/runtime/preempt.go
+fn=(2) runtime.asyncPreempt2
++34600 307 1
+
+ob=
+fl=(3) /usr/local/go/src/runtime/proc.go
+fn=(3) runtime.gopark
++6485 398 1
+
+ob=
+fl=(4) /usr/local/go/src/runtime/netpoll.go
+fn=(4) runtime.netpollblock
+-27223 564 0
+cfl=(3)
+cfn=(3)
+calls=0 * 398
+* * 1
+
+ob=
+fl=(3)
+fn=(5) runtime.main
++26084 267 0
+cfl=(5) /Users/ryan/jokerTrickster/go_profiling/src/main.go
+cfn=(6) main.main
+calls=0 +2330626 17
+* * 1
+
+ob=
+fl=(1)
+fn=(7) runtime/pprof.runtime_goroutineProfileWithLabels
++183138 844 0
+cfl=(1)
+cfn=(1)
+calls=0 -39946 853
+* * 1
+
+ob=
+fl=(4)
+fn=(8) internal/poll.runtime_pollWait
++936 343 0
+cfl=(4)
+cfn=(4)
+calls=0 -209222 564
+* * 1
+
+ob=
+fl=(6) /usr/local/go/src/runtime/preempt_amd64.s
+fn=(9) runtime.asyncPreempt
++28450 53 0
+cfl=(2)
+cfn=(2)
+calls=0 -189420 307
+* * 1
+
+ob=
+fl=(7) /usr/local/go/src/internal/poll/fd_poll_runtime.go
+fn=(10) internal/poll.(*pollDesc).wait
++272448 84 0
+cfl=(4)
+cfn=(8)
+calls=0 -28450 343
+* * 1
+
+ob=
+fl=(8) /usr/local/go/src/internal/poll/fd_unix.go
+fn=(11) internal/poll.(*FD).Accept
++5829 611 0
+cfl=(7)
+cfn=(12) internal/poll.(*pollDesc).waitRead
+calls=0 +5829 89
+* * 1
+
+ob=
+fl=(7)
+fn=(12)
+* 89 0
+cfl=(7)
+cfn=(10)
+calls=0 -5829 84
+* * 1
+
+ob=
+fl=(9) /usr/local/go/src/net/fd_unix.go
+fn=(13) net.(*netFD).accept
++671293 172 0
+cfl=(8)
+cfn=(11)
+calls=0 * 611
+* * 1
+
+ob=
+fl=(10) /usr/local/go/src/net/tcpsock.go
+fn=(14) net.(*TCPListener).Accept
++60231 315 0
+cfl=(11) /usr/local/go/src/net/tcpsock_posix.go
+cfn=(15) net.(*TCPListener).accept
+calls=0 +63509 152
+* * 1
+
+ob=
+fl=(11)
+fn=(15)
++3278 152 0
+cfl=(9)
+cfn=(13)
+calls=0 -60231 172
+* * 1
+
+ob=
+fl=(12) /usr/local/go/src/net/http/server.go
+fn=(16) net/http.(*conn).serve
++734102 2009 0
+cfl=(12)
+cfn=(17) net/http.serverHandler.ServeHTTP
+calls=0 +748336 2938
+* * 1
+
+ob=
+fl=(12)
+fn=(18) net/http.HandlerFunc.ServeHTTP
++4565 2136 0
+cfl=(13) /usr/local/go/src/net/http/pprof/pprof.go
+cfn=(19) net/http/pprof.Index
+calls=0 +340209 384
+* * 1
+
+ob=
+fl=(12)
+fn=(20) net/http.(*ServeMux).ServeHTTP
++6425 2514 0
+cfl=(12)
+cfn=(18)
+calls=0 * 2136
+* * 1
+
+ob=
+fl=(12)
+fn=(17)
++3244 2938 0
+cfl=(12)
+cfn=(20)
+calls=0 * 2514
+* * 1
+
+ob=
+fl=(12)
+fn=(21) net/http.(*Server).ListenAndServe
++195 2985 0
+cfl=(12)
+cfn=(22) net/http.(*Server).Serve
+calls=0 +1110 3056
+* * 1
+
+ob=
+fl=(12)
+fn=(22)
++915 3056 0
+cfl=(10)
+cfn=(14)
+calls=0 -751809 315
+* * 1
+
+ob=
+fl=(14) /usr/local/go/src/runtime/pprof/pprof.go
+fn=(23) runtime/pprof.(*Profile).WriteTo
++250914 329 0
+cfl=(14)
+cfn=(24) runtime/pprof.writeGoroutine
+calls=0 +264577 694
+* * 1
+
+ob=
+fl=(14)
+fn=(24)
++13663 694 0
+cfl=(14)
+cfn=(25) runtime/pprof.writeRuntimeProfile
+calls=0 +14123 734
+* * 1
+
+ob=
+fl=(14)
+fn=(25)
++460 734 0
+cfl=(1)
+cfn=(7)
+calls=0 -2056488 844
+* * 1
+
+ob=
+fl=(13)
+fn=(26) net/http/pprof.handler.ServeHTTP
++57015 267 0
+cfl=(14)
+cfn=(23)
+calls=0 -14123 329
+* * 1
+
+ob=
+fl=(13)
+fn=(19)
++2813 384 0
+cfl=(13)
+cfn=(26)
+calls=0 * 267
+* * 1
+
+ob=
+fl=(5)
+fn=(6)
++4628 17 0
+cfl=(5)
+cfn=(27) main.OutterFunc
+calls=0 +4741 21
+* * 1
+
+ob=
+fl=(5)
+fn=(28) main.IncreaseInt
++113 30 0
+cfl=(5)
+cfn=(29) main.increase1000
+calls=0 +113 46
+* * 1
+
+ob=
+fl=(5)
+fn=(27)
+* 21 0
+cfl=(5)
+cfn=(28)
+calls=0 * 30
+* * 1
+
+ob=
+fl=(5)
+fn=(29)
+* 46 0
+cfl=(6)
+cfn=(9)
+calls=0 -2092131 53
+* * 1
+
+ob=
+fl=(5)
+fn=(30) main.main.func1
++259 14 0
+cfl=(12)
+cfn=(31) net/http.ListenAndServe
+calls=0 +259 3239
+* * 1
+
+ob=
+fl=(12)
+fn=(31)
+* 3239 0
+cfl=(12)
+cfn=(21)
+calls=0 -330780 2985
+* * 1
